@@ -1,9 +1,13 @@
 let STRING = {
   storage_name: "item",
 };
+
 let addBtn = document.querySelector(".add_icon");
 addBtn.addEventListener("click", () => {
   const name = prompt("Enter the name ");
+  if (!name) {
+    return;
+  }
   const link = prompt("Enter the URL ");
   if (!link || !name) {
     return;
@@ -34,7 +38,8 @@ function deleteFromStorage(id, identifier) {
     return;
   }
   let data = JSON.parse(localStorage.getItem(identifier));
-  let deletedData = data.filter((item) => {
+  let afterDelation = data.filter((item) => {
     return item.id !== id;
   });
+  localStorage.setItem(identifier, JSON.stringify(afterDelation));
 }
