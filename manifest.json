@@ -1,0 +1,13 @@
+{
+  "name": "inspire me",
+  "description": "inspire me is the chrome extension which inspire people, every single time when they open up the new chrome tab. Just it make you motivated all the time !! ",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "script.js"
+  },
+  "permissions": ["storage"],
+  "chrome_url_overrides": {
+    "newtab": "quote.html"
+  }
+}
